@@ -1,7 +1,12 @@
-#ifndef MAINWINDOW_H
+﻿#ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+
+#include <QGraphicsScene>
+#include <QGraphicsView>
+
+class Battle;
 
 namespace Ui {
 class MainWindow;
@@ -16,6 +21,14 @@ public:
     ~MainWindow();
 
 private:
+//    void initScene();
+//    void initSceneBackgroud();
+
+    QGraphicsScene *scene;
+    QGraphicsView *view;
+
+    Battle *battle;
+
     Ui::MainWindow *ui;
 };
 

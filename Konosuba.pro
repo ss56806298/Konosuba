@@ -25,10 +25,23 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    battle.cpp \
+    boss.cpp \
+    member.cpp \
+    team.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    battle.h \
+    boss.h \
+    member.h \
+    member_list.h \
+    team.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    battle.ui
+
+RESOURCES += \
+    res.qrc
