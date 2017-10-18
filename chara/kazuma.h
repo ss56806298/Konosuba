@@ -1,12 +1,22 @@
-﻿#ifndef MEMBER_H
-#define MEMBER_H
+﻿#ifndef KAZUMA_H
+#define KAZUMA_H
 
-#include <QString>
+#include <QGraphicsItem>
 
-class Member
+class GameController;
+
+class Kazuma : public QGraphicsItem
 {
 public:
-    Member();
+
+    Kazuma(GameController &controller);
+
+    void paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *);
+
+    QRectF boundingRect() const;
+
+protected:
+    void advance(int step);
 
 private:
     QString NAME;   //名
@@ -20,11 +30,11 @@ private:
     int MAX_MP; //最大蓝量
     int SPD;    //速度
     int STR;    //力量
-    int INT;    //智力
+    int ITL;    //智力
     int AGI;    //敏捷
     int LUK;    //幸运
     int PHY_DEF; //物理防御力
     int MAG_DEF; //魔法防御力
 };
 
-#endif // MEMBER_H
+#endif // KAZUMA_H

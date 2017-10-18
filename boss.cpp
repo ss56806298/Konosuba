@@ -1,16 +1,42 @@
-﻿#include "boss.h"
-#include "battle.h"
-#include "ui_battle.h"
+﻿#include <QPainter>
 
-Boss::Boss(Battle &battle, Ui::Battle *ui) :
-    ui(ui),
+#include "boss.h"
+#include "gamecontroller.h"
+#include "constants.h"
+
+Boss::Boss(GameController &controller) :
     hp(1000),
     speed(30),
     physical_attack(100),
     magic_attack(50),
     physical_defense(10),
-    magic_defense(5)
+    magic_defense(5),
+    controller(controller)
 {
+
+}
+
+void Boss::advance(int step)
+{
+    if (!step) {
+        return;
+    }
+}
+
+void Boss::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
+{
+    painter->save();
+    QPixmap image_boss;
+    image_boss.load(":/images/boss_kfc");
+
+    painter->drawPixmap(p_boss_tl_x, p_boss_tl_y, image_boss);
+
+    painter->restore();
+}
+
+QRectF Boss::boundingRect() const
+{
+    return QRectF(0,0,0,0);
 }
 
 //void Boss::paint()

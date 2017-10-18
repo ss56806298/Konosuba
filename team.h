@@ -16,7 +16,7 @@ class Team {
 public:
     Team();
 
-    t_m team_inf[max_team_member];//现在的队伍信息
+//    t_m team_inf[max_team_member];//现在的队伍信息
 
 };
 

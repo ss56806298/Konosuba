@@ -4,13 +4,9 @@
 #include <QGraphicsItem>
 #include <QPixmap>
 
-namespace Ui {
-class Battle;
-}
+class GameController;
 
-class Battle;
-
-class Boss
+class Boss : public QGraphicsItem
 {
 public:
     enum Action {
@@ -22,12 +18,18 @@ public:
         Defense
     };
 
-    Boss(Battle &battle, Ui::Battle *ui);
+    Boss(GameController &controller);
 
+    QRectF boundingRect() const;
+
+    void paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *);
 //    void setBossAction(Action action);
 
+protected:
+    void advance(int step);
+
 private:
-    Ui::Battle *ui;
+    GameController &controller;
 
     int hp;
     int speed;

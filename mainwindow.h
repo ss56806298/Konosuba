@@ -3,21 +3,17 @@
 
 #include <QMainWindow>
 
-#include <QGraphicsScene>
-#include <QGraphicsView>
+class GameController;
 
-class Battle;
-
-namespace Ui {
-class MainWindow;
-}
+class QGraphicsScene;
+class QGraphicsView;
 
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
 private:
@@ -27,9 +23,8 @@ private:
     QGraphicsScene *scene;
     QGraphicsView *view;
 
-    Battle *battle;
+    GameController *game;
 
-    Ui::MainWindow *ui;
 };
 
 #endif // MAINWINDOW_H

@@ -1,14 +1,11 @@
-﻿#ifndef MEMBER_H
-#define MEMBER_H
+﻿#ifndef CHARA_H
+#define CHARA_H
 
-#include <QString>
+#include <QGraphicsItem>
 
-class Member
+class Chara : public QGraphicsItem
 {
 public:
-    Member();
-
-private:
     QString NAME;   //名
     int GENDER; //性别,1男2女0不明
     int PRO;    //职业
@@ -20,11 +17,11 @@ private:
     int MAX_MP; //最大蓝量
     int SPD;    //速度
     int STR;    //力量
-    int INT;    //智力
+    int ITL;    //智力
     int AGI;    //敏捷
     int LUK;    //幸运
     int PHY_DEF; //物理防御力
     int MAG_DEF; //魔法防御力
 };
 
-#endif // MEMBER_H
+#endif // CHARA_H

@@ -26,22 +26,29 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    battle.cpp \
     boss.cpp \
     member.cpp \
-    team.cpp
+    team.cpp \
+    gamecontroller.cpp \
+    chara/kazuma.cpp
 
 HEADERS += \
         mainwindow.h \
-    battle.h \
     boss.h \
     member.h \
     member_list.h \
-    team.h
+    team.h \
+    gamecontroller.h \
+    constants.h \
+    chara/kazuma.h
 
 FORMS += \
         mainwindow.ui \
     battle.ui
+
+TRANSLATIONS = konosuba_zh.ts \
+                konosuba_en.ts \
+                konosuba_jp.ts
 
 RESOURCES += \
     res.qrc
